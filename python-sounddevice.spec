@@ -1,6 +1,6 @@
 Name:		python-sounddevice
 Version:	0.5.6
-Release:	1
+Release:	2
 Summary:	Play and record sound with Python
 License:	MIT
 Group:		Development/Python
@@ -19,6 +19,10 @@ Recommends:	pkgconfig(portaudio-2.0)
 
 %description
 PortAudio bindings for Python. Used by Aider for voice input.
+
+%build -p
+# The sdist is not a git checkout, so the versioning backend needs the version.
+export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 
 %files
 %doc README.rst
